@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+DESCRIPTION:
+This file will launch the table.launch file from gazebo_worlds and also some cubelets ontop of the table.
+
+-->
+<launch>
+  <!-- Launch the table -->
+  <param name="table_description" command="$(find xacro)/xacro.py $(find gazebo_worlds)/objects/table.urdf.xacro" />
+  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -z 0.01 -model table_model" respawn="false" output="screen" />
+
+  <!-- Launch a passive block -->
+  <param name="passive_urdf_file" textfile="$(find Cubelet)/urdf/green_cube.urdf" />
+  <node name="spawn_passive_cubelet" pkg="gazebo" type="spawn_model" args="-urdf -param passive_urdf_file -z 0.57 -x 0.8 -y 0.0 -model passive" respawn="false" output="screen" />
+</launch>
+

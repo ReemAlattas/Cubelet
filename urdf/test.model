@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--Required to work with the include tag in the *.world file? -->
+<!--However, does not seem to be required if *.world file is not used? -->
+<model:physical 
+  xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" 
+  xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" 
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" 
+  xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" 
+  xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" 
+  xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint" 
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" 
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" 
+  xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering" 
+  xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
+  name="passive_cubelet">
+  <!--Origin for this model w.r.t. the Gazebo coordinate frame-->
+  <!-- (m, radians) -->
+  <xyz>0.0 0.0 0.0</xyz>
+  <rpy>0.0 0.0 0.0</rpy>
+  <!--Indicates wheter the model is affected by physics.  true->object will never move.-->
+  <static>false</static>
+  <body:cylinder name="passive_body">
+    <!--Position of the body with respect to the origin-->
+    <!-- (m, radians) -->
+    <xyz>0.0 0.0 0.0</xyz>
+    <rpy>0.0 0.0 0.0</rpy>
+    <geom:cylinder name="passive_geom">
+      <!-- Mass matrix info -->
+      <!-- (kg, kg*m^2) -->
+      <massMatrix>true</massMatrix> 
+      <mass>0.12220</mass>
+      <ixx>0.000035931</ixx>
+      <ixy>0.0</ixy>
+      <ixz>0.0</ixz>
+      <iyy>0.000035931</iyy>
+      <iyz>0.0</iyz>
+      <izz>0.00003593</izz>
+      <!--center of gravity -->
+      <!-- (m) -->
+      <cx>0.0</cx>
+      <cy>0.0</cy>
+      <cz>0.0</cz>
+      <laserRetro>2000.0</laserRetro>
+      <!--Stiffness coefficient-->
+      <kp>1000.0</kp>
+      <!--Damping coefficient-->
+      <kd>100.0</kd>
+      <!-- Friction coefficient-->
+      <!-- most examples show mu1 and mu2, but some notes show this isn't supported-->
+      <mu>1.0</mu>
+      <size>0.042 0.021</size>
+      <!-- Scale of the trimesh (STL or DAE) file. 1.0 here since saved as meters -->
+      <!--scale>1.0 1.0 1.0</scale-->
+      <!--mesh>/home/andymcevoy/ros/Cubelet/stl/passive.dae</mesh-->
+      <visual>
+        <scale>1.0 1.0 1.0</scale>
+        <mesh>/home/andymcevoy/ros/Cubelet/stl/passive.dae</mesh>
+      </visual>
+    </geom:cylinder>
+  </body:cylinder>
+</model:physical>

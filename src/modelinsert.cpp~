@@ -1,0 +1,40 @@
+#include <gazebo/PhysicsEngine.hh>
+#include <gazebo/gazebo.h>
+
+namespace gazebo
+{
+  class Factory : public WorldPlugin
+  {
+    public: void Load(physics::WorldPtr _parent, sdf::ElementPtr /*_sdf*/)
+    {
+      // Option 3: Insert model from file via message passing.
+      {
+        // Create a new transport node
+        transport::NodePtr node(new transport::Node());
+
+        // Initialize the node with the world name
+        node->Init(_parent->GetName());
+
+        // Create a publisher on the ~/factory topic
+        transport::PublisherPtr factoryPub =
+          node->Advertise<msgs::Factory>("~/factory");
+
+        // Create the message
+        msgs::Factory msg;
+
+        // Model file to load
+        msg.set_sdf_filename("/home/andymcevoy/ros/Cubelet/urdf/green_cube.model");
+
+        // Pose to initialize the model to
+        msgs::Set(msg.mutable_pose(),
+            math::Pose(math::Vector3(1, -2, 0), math::Quaternion(0, 0, 0)));
+
+        // Send the message
+        factoryPub->Publish(msg);
+      }
+    }
+  };
+
+  // Register this plugin with the simulator
+  GZ_REGISTER_WORLD_PLUGIN(Factory)
+}

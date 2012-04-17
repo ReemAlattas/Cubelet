@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+DESCRIPTION:
+This file will launch the table.launch file from gazebo_worlds and also some cubelets ontop of the table.
+
+-->
+<launch>
+  <!-- Launch an battery block -->
+  <param name="basic_urdf_file" textfile="$(find Cubelet)/urdf/basic.urdf" />
+  <node name="spawn_basic_cubelet" pkg="gazebo" type="spawn_model" args="-urdf -param basic_urdf_file -z 0.57 -x 0.9 -y 0.45 -model basic_cube" respawn="false" output="screen" />
+
+</launch>
+
