@@ -1,0 +1,4 @@
+ROS Cubelet files.
+
+These files are being developed for use with ROS.  
+The intent is to have cubelets that behave properly in the Gazebi simulation environment.
