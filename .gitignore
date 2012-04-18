@@ -1,1 +1,11 @@
-*~
+# Andy McEvoy
+# 
+# 17 - April - 2012
+#
+# git ignore files for the Cubelet project.
+#
+# .gitignore_global in use.  See help.github.com/ignore-files/ for a list of ignored files.
+# *~ files have been added to this list.
+#
+# Ignore everything in the build directory
+build/*
