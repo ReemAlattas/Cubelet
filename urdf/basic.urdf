@@ -28,9 +28,9 @@
     <genTexCoord>true</genTexCoord>
     <kp>100000000.0</kp>
     <kd>1000000.0</kd>
-    <controller:cubelet_examineworld name="passive_cubelet_examineworld_controller" plugin="/home/admin/ros/Cubelet/lib/libcubelet_examineworld.so">
+    <controller:pub_world name="pub_world_controller" plugin="/home/admin/ros/Cubelet/lib/libpub_world_state.so">
     <alwaysOn>true</alwaysOn>
     <update>10</update>
-    <controller:examineworld/>
+    <controller:pub_world/>
   </gazebo>
 </robot>

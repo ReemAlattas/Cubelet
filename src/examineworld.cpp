@@ -43,13 +43,6 @@ void examineWorld::UpdateChild()
   Pose3d newPose = myParent->GetWorldPose();
   std::cout << "Hello World!" << std::endl;
   std::cout << "    " << myParent->GetWorldPose()<< std::endl;
-  if (newPose.pos.z<0.02)
-  {
-    std::cout << "    Setting new pose!\n";
-    newPose.pos.Set(1.0, 1.0, 1.0);
-    myParent->SetWorldPose(newPose, false);
-    std::cout << "    New pose = " << myParent->GetWorldPose() << std::endl;
-  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // Finalize the controller
