@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <iostream>
-#include "../include/examineworld.h"
+#include "/home/andymcevoy/ros/Cubelet/include/examineworld.h"
 #include <gazebo/Global.hh>
 #include <gazebo/XMLConfig.hh>
 #include <gazebo/gazebo.h>
