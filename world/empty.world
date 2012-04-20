@@ -42,27 +42,6 @@
       </link>
     </model>
 
-    <!-- basic cubelet-->
-    <model name="passive_cubelet" static="false">
-      <link name="body">
-	<inertial mass="0.050">
-	  <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
-	</inertial>
-	<collision name="geom">
-	  <origin pose="0.021 0.021 0.021 0 0 0" />
-	  <geometry>
-	    <box size="0.042 0.042 0.042" />
-	  </geometry>
-	</collision>
-	<visual name="cubelet_surface" cast_shadows="true">
-	  <origin pose="0.021 0.021 0.021 0 0 0" />
-	  <geometry>
-	    <mesh filename="/home/andymcevoy/ros/Cubelet/stl/inverse.dae" scale="1.0 1.0 1.0" />
-	  </geometry>
-	</visual>
-      </link>
-    </model>
-
     <light type="directional" name="my_light" cast_shadows="false">
       <origin pose="0 0 30 0 0 0"/>
       <diffuse rgba=".9 .9 .9 1"/>
