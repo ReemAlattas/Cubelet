@@ -42,6 +42,8 @@
       </link>
     </model>
 
+    <include filename="basic.model" model_name="basic_cube_1" />
+
     <!-- basic cubelet-->
     <model name="passive_cubelet" static="false">
       <link name="body">

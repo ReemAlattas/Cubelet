@@ -16,7 +16,7 @@
   <depend package="xacro"/>
   <depend package="gazebo"/>
   <export>
-    <gazebo gazebo_media_path="${prefix}" />
+    <gazebo gazebo_media_path="${prefix}/home/admin/ros/Cubelets/urdf" />
   </export>
 
 </package>

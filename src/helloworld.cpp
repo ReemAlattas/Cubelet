@@ -1,23 +1,43 @@
-#include "gazebo.h"
 #include <iostream>
+#include <boost/bind.hpp>
+#include "gazebo.h"
+#include "physics/physics.h"
+//#include "Pose.hh"
 
 namespace gazebo
 {
-  class cubelet_HelloWorld : public WorldPlugin
+  class cubelet_HelloWorld : public ModelPlugin
   {
-  public: cubelet_HelloWorld() : public WorldPlugin()
+  public: cubelet_HelloWorld() : ModelPlugin()
     {
-      printf("Hello Cubelets!\n");
+      std::cout << "*****\n\n HELLO CUBELETS!\n\n*****";
     }
-  public: void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
+  public: void Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     {
+      this->model = _parent;
+      this->updateConnection = event::Events::ConnectWorldUpdateStart(boost::bind(&cubelet_HelloWorld::OnUpdate, this));
     }
   public: void OnUpdate()
     {
-      std::cout << "on update function\n";
+      //std::cout << "Joint Count = " << model->GetWorldPose() << std::endl;
+      pose=model->GetWorldPose();
+      //newPosition.x=0.0;
+      //newPosition.y=0.0;
+      //newPosition.z=1.0;
+      if (pose.pos.z<0.1) 
+	{
+	  std::cout << "    Reset position\n";
+	  pose.pos.z=1.0;
+	  model->SetWorldPose(pose);
+	  std::cout << "        New joint position = " << model->GetWorldPose() << std::endl;
+	}
     }
+  private: physics::ModelPtr model;
+  private: math::Pose pose;
+  private: math::Vector3 newPosition;
+  private: event::ConnectionPtr updateConnection;
   };
-  GZ_REGISTER_WORLD_PLUGIN(cubelet_HelloWorld)
+  GZ_REGISTER_MODEL_PLUGIN(cubelet_HelloWorld)
 }
 
 
