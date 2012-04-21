@@ -1,12 +1,5 @@
-#include <algorithm>
-#include <assert.h>
-#include <iostream>
 #include "../include/helloworld.h"
-#include <gazebo/Global.hh>
-#include <gazebo/XMLConfig.hh>
-#include <gazebo/gazebo.h>
-#include <gazebo/GazeboError.hh>
-#include <gazebo/ControllerFactory.hh>
+#include <gazebo.h>
 
 using namespace gazebo;
 
