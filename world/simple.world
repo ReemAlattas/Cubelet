@@ -57,10 +57,11 @@
 	<visual name="cubelet_surface" cast_shadows="true">
 	  <origin pose="0.021 0.021 0.021 0 0 0" />
 	  <geometry>
-	    <mesh filename="/home/andymcevoy/ros/Cubelet/stl/inverse.dae" scale="1.0 1.0 1.0" />
+	    <mesh filename="/home/admin/ros/Cubelet/stl/passive.dae" scale="1.0 1.0 1.0" />
 	  </geometry>
 	</visual>
       </link>
+      <plugin name="cubelet_HelloWorld" filename="/home/admin/ros/Cubelet/lib/libcubelet_HelloWorld.so" />
     </model>
 
     <light type="directional" name="my_light" cast_shadows="false">

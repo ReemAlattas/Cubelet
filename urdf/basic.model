@@ -13,4 +13,5 @@
       <mesh filename="/home/andymcevoy/ros/Cubelets/stl/passive.dae" scale="1.0 1.0 1.0" />
     </visual>
   </link>
+  <plugin name="cubelet_HelloWorld" filename="/home/admin/ros/Cubelet/lib/libcubelet_HelloWorld.so" />
 </model>

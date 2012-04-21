@@ -1,45 +1,24 @@
-#include "../include/helloworld.h"
-#include <gazebo.h>
+#include "gazebo.h"
+#include <iostream>
 
-using namespace gazebo;
-
-////////////////////////////////////////////////////////////////////////////////
-// Constructor
-helloGazebo::helloGazebo(Entity *parent) : Controller(parent)
+namespace gazebo
 {
-}
-////////////////////////////////////////////////////////////////////////////////
-// Destructor
-//helloGazebo::~helloGazebo()
-//{
-  //}
-////////////////////////////////////////////////////////////////////////////////
-// Load the controller
-void helloGazebo::LoadChild(XMLConfigNode *node)
-{
-}
-////////////////////////////////////////////////////////////////////////////////
-// Initialize the controller
-void helloGazebo::InitChild()
-{
-}
-////////////////////////////////////////////////////////////////////////////////
-// Update the controller
-void helloGazebo::UpdateChild()
-{
-    /***************************************************************/
-    /*                                                             */
-    /*  this is called at every update simulation step             */
-    /*                                                             */
-    /***************************************************************/
-  std::cout << "Hello World!" << std::endl;
-}
-////////////////////////////////////////////////////////////////////////////////
-// Finalize the controller
-void helloGazebo::FiniChild()
-{
+  class cubelet_HelloWorld : public WorldPlugin
+  {
+  public: cubelet_HelloWorld() : public WorldPlugin()
+    {
+      printf("Hello Cubelets!\n");
+    }
+  public: void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
+    {
+    }
+  public: void OnUpdate()
+    {
+      std::cout << "on update function\n";
+    }
+  };
+  GZ_REGISTER_WORLD_PLUGIN(cubelet_HelloWorld)
 }
 
-GZ_REGISTER_DYNAMIC_CONTROLLER("cubelet_helloworld", helloGazebo)
 
 
