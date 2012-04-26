@@ -1,0 +1,42 @@
+#include <iostream>
+#include <boost/bind.hpp>
+#include "gazebo.h"
+#include "physics/physics.h"
+//#include "Pose.hh"
+
+namespace gazebo
+{
+  class cubelet_HelloWorld : public WorldPlugin
+  {
+  public: cubelet_HelloWorld() : WorldPlugin()
+    {
+      std::cout << "*****\n\n HELLO CUBELETS!\n\n*****";
+    }
+  public: void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
+    {
+      this->world = _world;
+      this->updateConnection = event::Events::ConnectWorldUpdateStart(boost::bind(&cubelet_HelloWorld::OnUpdate, this));
+      this->lastTime = world->GetRealTime();
+      int modelCount =  _world->GetModelCount();
+      std::cout << "*****\n\n MODEL COUNT = "<< modelCount <<"\n\n*****";
+    }
+ public: void OnUpdate()
+    {
+      //only once a a second print
+      if (lastTime.sec < world->GetRealTime().sec) {
+        //Find Distance from 1 to 2
+        double dist = world->GetModel(1)->GetWorldPose().pos.Distance( world->GetModel(2)->GetWorldPose().pos );
+        std::cout << "*****\n\n Distance = "<< dist <<"\n\n*****";
+      }
+      this->lastTime = world->GetRealTime();
+      
+    }
+  private: physics::WorldPtr world;
+  private: event::ConnectionPtr updateConnection;
+  private: common::Time lastTime;
+  };
+  GZ_REGISTER_WORLD_PLUGIN(cubelet_HelloWorld)
+}
+
+
+

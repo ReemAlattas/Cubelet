@@ -1,0 +1,17 @@
+/home/robot/ros/Cubelet/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/robot/ros/Cubelet/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/robot/ros/Cubelet/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/robot/ros/Cubelet/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/robot/ros/Cubelet/CMakeFiles/clean-test-results.dir
+/home/robot/ros/Cubelet/CMakeFiles/cubelet_HelloWorld.dir
+/home/robot/ros/Cubelet/CMakeFiles/cubelet_pose.dir
+/home/robot/ros/Cubelet/CMakeFiles/rosbuild_precompile.dir
+/home/robot/ros/Cubelet/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/robot/ros/Cubelet/CMakeFiles/rospack_genmsg.dir
+/home/robot/ros/Cubelet/CMakeFiles/rospack_genmsg_libexe.dir
+/home/robot/ros/Cubelet/CMakeFiles/rospack_gensrv.dir
+/home/robot/ros/Cubelet/CMakeFiles/test.dir
+/home/robot/ros/Cubelet/CMakeFiles/test-future.dir
+/home/robot/ros/Cubelet/CMakeFiles/test-results.dir
+/home/robot/ros/Cubelet/CMakeFiles/test-results-run.dir
+/home/robot/ros/Cubelet/CMakeFiles/tests.dir
