@@ -189,7 +189,7 @@ ROSPACK_EXE:FILEPATH=/opt/ros/fuerte/bin/rospack
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
 //Path to a file.
-_file_name:FILEPATH=//home/robot/ros/Cubelet/src/cubeletPose.cpp
+_file_name:FILEPATH=//home/robot/ros/Cubelet/src/helloworld.cpp
 
 //Dependencies for the target
 cubelet_HelloWorld_LIB_DEPENDS:STATIC=general;tf;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;sensor_msgs;general;message_filters;general;roscpp;general;rostime;general;rosconsole;general;roscpp_serialization;general;xmlrpcpp;general;urdf;general;collada15dom;general;minizip;general;boost_system-mt;general;boost_filesystem-mt;general;urdf_parser;general;collada_parser;general;rviz;general;OgreRTShaderSystem;general;OgreMain;general;ogre_tools;general;roslib;general;laser_geometry;general;resource_retriever;general;image_transport;general;poco_lite;general;boost_fs_wrapper;general;tinyxml;general;interactive_markers;general;urdf2gazebo;general;xml2;general;boost_signals-mt;general;fltk_gl;general;fltk;general;freeimage;general;gazebo_physics;general;gazebo_sensors;general;gazebo_rendering;general;gazebo_sdf_interface;general;gazebo_math;general;gazebo_common;general;gazebo_transport;general;gazebo_msgs;general;gazebo_ode;general;boost_thread-mt;general;dynamic_reconfigure_config_init_mutex;general;protobuf;general;z;general;pthread;general;-lboost_thread-mt;

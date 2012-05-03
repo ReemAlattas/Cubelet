@@ -4,7 +4,6 @@
 /home/robot/ros/Cubelet/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/robot/ros/Cubelet/CMakeFiles/clean-test-results.dir
 /home/robot/ros/Cubelet/CMakeFiles/cubelet_HelloWorld.dir
-/home/robot/ros/Cubelet/CMakeFiles/cubelet_pose.dir
 /home/robot/ros/Cubelet/CMakeFiles/rosbuild_precompile.dir
 /home/robot/ros/Cubelet/CMakeFiles/rosbuild_premsgsrvgen.dir
 /home/robot/ros/Cubelet/CMakeFiles/rospack_genmsg.dir

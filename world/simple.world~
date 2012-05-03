@@ -10,7 +10,7 @@
     <physics type="ode">
       <gravity xyz="0 0 -9.8"/>
       <ode>
-        <solver type="quick" dt="0.0001" iters="10" sor="1.3"/>
+        <solver type="quick" dt="0.00001" iters="100" sor="1.3"/>
         <constraints cfm="0.0" erp="0.2" contact_max_correcting_vel="100.0" contact_surface_layer="0.001"/>
       </ode>
     </physics>
@@ -48,11 +48,11 @@
     <model name="passive_cubelet_1" static="false">
       <link name="body">
 	<inertial mass="0.050">
-	  <origin pose="0.0 0.0 0.022 0.0 0.0 0.0"/>
+	  <origin pose="0.0 0.0 0.172 0.0 0.0 0.0"/>
 	  <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
 	</inertial>
 	<collision name="geom">
-	  <origin pose="0.0 0.0 0.022 0 0 0" />
+	  <origin pose="0.0 0.0 0.172 0 0 0" />
 	  <geometry>
 	    <box size="0.042 0.042 0.042" />
 	  </geometry>
@@ -64,23 +64,31 @@
 	  </surface>
 	</collision>
 	<visual name="cubelet_surface" cast_shadows="true">
-	  <origin pose="0.0 0.0 0.022 0 0 0" />
+	  <origin pose="0.0 0.0 0.172 0 0 0" />
 	  <geometry>
 	    <mesh filename="/home/robot/ros/Cubelet/stl/passive.dae" scale="1.0 1.0 1.0" />
 	  </geometry>
 	  
 	</visual>
       </link>
+      <joint name="cube_joint" type="revolute">
+	<parent link="body"/>
+	<child link="body"/>
+	<origin pose="0 0 0 0 0 0"/>
+	<axis xyz="0 0 1">
+	  <limit lower="0" upper="0"/>
+	</axis>
+      </joint>
     </model>
 
     <model name="passive_cubelet_2" static="false">
       <link name="body">
 	<inertial mass="0.050">
-	  <origin pose="0.0 0.05 0.022 0.0 0.0 0.0"/>
+	  <origin pose="0.0 0.0 0.122 0.0 0.0 0.0"/>
 	  <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
 	</inertial>
 	<collision name="geom">
-	  <origin pose="0.0 0.05 0.022 0 0 0" />
+	  <origin pose="0.0 0.0 0.122 0 0 0" />
 	  <geometry>
 	    <box size="0.042 0.042 0.042" />
 	  </geometry>
@@ -92,13 +100,89 @@
 	  </surface>
 	</collision>
 	<visual name="cubelet_surface" cast_shadows="true">
-	  <origin pose="0.0 0.05 0.022 0 0 0" />
+	  <origin pose="0.0 0.0 0.122 0 0 0" />
 	  <geometry>
 	    <mesh filename="/home/robot/ros/Cubelet/stl/passive.dae" scale="1.0 1.0 1.0" />
 	  </geometry>
 	</visual>
       </link>
-      <!--plugin name="cubelet_pose" filename="/home/robot/ros/Cubelet/lib/libcubelet_pose.so" /-->
+      <joint name="cube_joint" type="revolute">
+	<parent link="body"/>
+	<child link="body"/>
+	<origin pose="0 0 0 0 0 0"/>
+	<axis xyz="0 0 1">
+	  <limit lower="0" upper="0"/>
+	</axis>
+      </joint>
+    </model>
+
+    <model name="passive_cubelet_3" static="false">
+      <link name="body">
+	<inertial mass="0.050">
+	  <origin pose="0.0 0.0 0.072 0.0 0.0 0.0"/>
+	  <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+	</inertial>
+	<collision name="geom">
+	  <origin pose="0.0 0.0 0.072 0 0 0" />
+	  <geometry>
+	    <box size="0.042 0.042 0.042" />
+	  </geometry>
+	  <surface>
+	    <friction>
+	      <ode mu="0.3"/>
+	    </friction>
+	    
+	  </surface>
+	</collision>
+	<visual name="cubelet_surface" cast_shadows="true">
+	  <origin pose="0.0 0.0 0.072 0 0 0" />
+	  <geometry>
+	    <mesh filename="/home/robot/ros/Cubelet/stl/passive.dae" scale="1.0 1.0 1.0" />
+	  </geometry>
+	</visual>
+      </link>
+      <joint name="cube_joint" type="revolute">
+	<parent link="body"/>
+	<child link="body"/>
+	<origin pose="0 0 0 0 0 0"/>
+	<axis xyz="0 0 1">
+	  <limit lower="0" upper="0"/>
+	</axis>
+      </joint>
+    </model>
+
+    <model name="passive_cubelet_4" static="false">
+      <link name="body">
+	<inertial mass="0.050">
+	  <origin pose="0.0 0.0 0.022 0.0 0.0 0.0"/>
+	  <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+	</inertial>
+	<collision name="geom">
+	  <origin pose="0.0 0.0 0.022 0 0 0" />
+	  <geometry>
+	    <box size="0.042 0.042 0.042" />
+	  </geometry>
+	  <surface>
+	    <friction>
+	      <ode mu="0.8"/>
+	    </friction>
+	  </surface>
+	</collision>
+	<visual name="cubelet_surface" cast_shadows="true">
+	  <origin pose="0.0 0.0 0.022 0 0 0" />
+	  <geometry>
+	    <mesh filename="/home/robot/ros/Cubelet/stl/passive.dae" scale="1.0 1.0 1.0" />
+	  </geometry>
+	</visual>
+      </link>
+      <joint name="cube_joint" type="revolute">
+	<parent link="body"/>
+	<child link="body"/>
+	<origin pose="0 0 0 0 0 0"/>
+	<axis xyz="0 0 1">
+	  <limit lower="0" upper="0"/>
+	</axis>
+      </joint>
     </model>
 
     <light type="directional" name="my_light" cast_shadows="false">

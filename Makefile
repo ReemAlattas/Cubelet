@@ -174,19 +174,6 @@ cubelet_HelloWorld/fast:
 .PHONY : cubelet_HelloWorld/fast
 
 #=============================================================================
-# Target rules for targets named cubelet_pose
-
-# Build rule for target.
-cubelet_pose: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cubelet_pose
-.PHONY : cubelet_pose
-
-# fast build rule for target.
-cubelet_pose/fast:
-	$(MAKE) -f CMakeFiles/cubelet_pose.dir/build.make CMakeFiles/cubelet_pose.dir/build
-.PHONY : cubelet_pose/fast
-
-#=============================================================================
 # Target rules for targets named rosbuild_precompile
 
 # Build rule for target.
@@ -317,21 +304,6 @@ tests/fast:
 .PHONY : tests/fast
 
 # target to build an object file
-src/cubeletPose.o:
-	$(MAKE) -f CMakeFiles/cubelet_pose.dir/build.make CMakeFiles/cubelet_pose.dir/src/cubeletPose.o
-.PHONY : src/cubeletPose.o
-
-# target to preprocess a source file
-src/cubeletPose.i:
-	$(MAKE) -f CMakeFiles/cubelet_pose.dir/build.make CMakeFiles/cubelet_pose.dir/src/cubeletPose.i
-.PHONY : src/cubeletPose.i
-
-# target to generate assembly for a file
-src/cubeletPose.s:
-	$(MAKE) -f CMakeFiles/cubelet_pose.dir/build.make CMakeFiles/cubelet_pose.dir/src/cubeletPose.s
-.PHONY : src/cubeletPose.s
-
-# target to build an object file
 src/helloworld.o:
 	$(MAKE) -f CMakeFiles/cubelet_HelloWorld.dir/build.make CMakeFiles/cubelet_HelloWorld.dir/src/helloworld.o
 .PHONY : src/helloworld.o
@@ -358,7 +330,6 @@ help:
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
 	@echo "... cubelet_HelloWorld"
-	@echo "... cubelet_pose"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -371,9 +342,6 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... src/cubeletPose.o"
-	@echo "... src/cubeletPose.i"
-	@echo "... src/cubeletPose.s"
 	@echo "... src/helloworld.o"
 	@echo "... src/helloworld.i"
 	@echo "... src/helloworld.s"
